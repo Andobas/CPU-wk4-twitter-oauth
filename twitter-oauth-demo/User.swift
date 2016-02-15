@@ -73,12 +73,13 @@ class User: NSObject {
                 } catch {
                     print(error)
                 }
-            } else {
+            /*} else {
                 //Clear the currentUser data
                 NSUserDefaults.standardUserDefaults().setObject(nil, forKey: currentUserKey)
+            */
             }
         }
-}
+    }
 
 
 
