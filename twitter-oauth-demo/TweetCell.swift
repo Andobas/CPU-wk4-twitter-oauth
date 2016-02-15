@@ -16,14 +16,16 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var handleLabel: UILabel!
     @IBOutlet weak var tweetLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var retweetLabel: UILabel!
-    @IBOutlet weak var likeLabel: UILabel!
-    @IBOutlet weak var replyButton: UIButton!
-    @IBOutlet weak var retweetButton: UIButton!
-    @IBOutlet weak var favoriteButton: UIButton!
+    
+    
     
     var tweet: Tweet! {
         didSet {
+            nameLabel.text = "\((tweet.user?.name)!)"
+            handleLabel.text = "@" + "\((tweet.user?.screenname)!)"
+            tweetLabel.text = tweet.text
+            timeLabel.text = "\(tweet.createdAt!)"
+            
             
         
         }

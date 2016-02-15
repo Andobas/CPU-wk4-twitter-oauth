@@ -47,15 +47,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nd-aE-PQY">
-                                <rect key="frame" x="25" y="9" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="onLogout:" destination="Ncq-eC-DKY" eventType="touchUpInside" id="B3b-2i-7jQ"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="152" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1aS-y6-G8S">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="57" width="320" height="511"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TweetCell" rowHeight="152" id="Dqv-tk-h3W" customClass="TweetCell" customModule="twitter_oauth_demo" customModuleProvider="target">
@@ -65,8 +58,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="151.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cNK-7O-cve">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cNK-7O-cve">
                                                     <rect key="frame" x="8" y="2" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="1FX-So-sTl"/>
+                                                        <constraint firstAttribute="width" constant="50" id="a7J-kk-i2j"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="@MMFlint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xcx-5F-C0a">
                                                     <rect key="frame" x="187" y="-1" width="77" height="21"/>
@@ -80,36 +77,12 @@
                                                     <color key="textColor" red="0.59881810897435894" green="0.59881810897435894" blue="0.59881810897435894" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="71" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTf-Gr-JGr">
-                                                    <rect key="frame" x="195" y="100" width="17" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.59881810897435894" green="0.59881810897435894" blue="0.59881810897435894" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="191" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nar-y6-kZ5">
-                                                    <rect key="frame" x="266" y="100" width="26" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                    <color key="textColor" red="0.59881810897435894" green="0.59881810897435894" blue="0.59881810897435894" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Michael Moore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihl-fN-fDZ">
                                                     <rect key="frame" x="66" y="-2" width="113" height="21"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Va-6D-4kS">
-                                                    <rect key="frame" x="218" y="96" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="du2-zS-2yW">
-                                                    <rect key="frame" x="141" y="96" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sAZ-X6-yxr">
-                                                    <rect key="frame" x="53" y="96" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E12-Bp-4Gp">
                                                     <rect key="frame" x="66" y="12" width="239" height="73"/>
                                                     <string key="text">All theaters showing WHERE TO INVADE NEXT report they're "warm &amp; toasty" and burning tons of fossil fuel to keep moviegoers happy! #climate </string>
@@ -119,15 +92,14 @@
                                                     <string key="userLabel">All theaters showing WHERE TO INVADE NEXT report they're "warm &amp; toasty" and burning tons of fossil fuel to keep moviegoers happy! #climate</string>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cNK-7O-cve" firstAttribute="top" secondItem="Mw9-kv-5FL" secondAttribute="top" constant="2" id="8mt-hU-bc6"/>
+                                                <constraint firstItem="cNK-7O-cve" firstAttribute="leading" secondItem="Mw9-kv-5FL" secondAttribute="leading" constant="8" id="z5X-gq-ChF"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="favoriteButton" destination="6Va-6D-4kS" id="4QT-v8-ps8"/>
                                             <outlet property="handleLabel" destination="Xcx-5F-C0a" id="dTh-wU-BMv"/>
-                                            <outlet property="likeLabel" destination="Nar-y6-kZ5" id="44P-WH-OFe"/>
                                             <outlet property="nameLabel" destination="ihl-fN-fDZ" id="Enm-VW-hR4"/>
-                                            <outlet property="replyButton" destination="sAZ-X6-yxr" id="puP-YN-4gR"/>
-                                            <outlet property="retweetButton" destination="du2-zS-2yW" id="l6n-eF-DeN"/>
-                                            <outlet property="retweetLabel" destination="wTf-Gr-JGr" id="zlf-TO-nhx"/>
                                             <outlet property="thumbImageView" destination="cNK-7O-cve" id="Zct-ea-Z9r"/>
                                             <outlet property="timeLabel" destination="Jmq-6p-GU3" id="omM-bi-bg8"/>
                                             <outlet property="tweetLabel" destination="E12-Bp-4Gp" id="xYq-Lf-Tl2"/>
@@ -135,13 +107,22 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nd-aE-PQY">
+                                <rect key="frame" x="264" y="20" width="48" height="30"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="Ncq-eC-DKY" eventType="touchUpInside" id="B3b-2i-7jQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1aS-y6-G8S" secondAttribute="trailing" id="5Sy-sV-zRs"/>
+                            <constraint firstAttribute="trailing" secondItem="5nd-aE-PQY" secondAttribute="trailing" constant="8" id="anv-Yx-e1t"/>
                             <constraint firstItem="rmp-r9-dNg" firstAttribute="top" secondItem="1aS-y6-G8S" secondAttribute="bottom" id="gDu-Bh-Osg"/>
-                            <constraint firstItem="1aS-y6-G8S" firstAttribute="top" secondItem="jV2-pR-ptJ" secondAttribute="top" id="i90-z8-rsd"/>
+                            <constraint firstItem="1aS-y6-G8S" firstAttribute="top" secondItem="5nd-aE-PQY" secondAttribute="bottom" constant="7" id="jXe-dZ-Gbr"/>
                             <constraint firstItem="1aS-y6-G8S" firstAttribute="leading" secondItem="jV2-pR-ptJ" secondAttribute="leading" id="t1E-R7-z1e"/>
+                            <constraint firstItem="5nd-aE-PQY" firstAttribute="top" secondItem="eux-94-BF5" secondAttribute="bottom" id="tCR-Gz-OGX"/>
                         </constraints>
                     </view>
                     <connections>
