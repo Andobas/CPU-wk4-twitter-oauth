@@ -1,8 +1,8 @@
-# Project 4 - *twitter-oauth-demo*
+# Project 4 - *twitter*
 
-**twitter-oauth-demo** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
+**twitter** is a basic twitter app to read and compose tweets the [Twitter API](https://apps.twitter.com/).
 
-Time spent: **X** hours spent in total
+Time spent: **28** hours spent in total
 
 ## User Stories
 
@@ -11,14 +11,14 @@ The following **required** functionality is completed:
 - [x] User can sign in using OAuth login flow
 - [x] User can view last 20 tweets from their home timeline
 - [x] The current signed in user will be persisted across restarts
-- [ ] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
-- [ ] Retweeting and favoriting should increment the retweet and favorite count.
+- [x] In the home timeline, user can view tweet with the user profile picture, username, tweet text, and timestamp.
+- [x] Retweeting and favoriting should increment the retweet and favorite count.
 
 The following **optional** features are implemented:
 
 - [ ] User can load more tweets once they reach the bottom of the feed using infinite loading similar to the actual Twitter client.
 - [ ] User should be able to unretweet and unfavorite and should decrement the retweet and favorite count.
-- [ ] User can pull to refresh.
+- [x] User can pull to refresh.
 
 The following **additional** features are implemented:
 
@@ -43,7 +43,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [2016] [kmolo]
+    Copyright [2016] [Juan Hernandez]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
