@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import BDBOAuth1Manager
+import AFNetworking
+
+    var refreshControl = UIRefreshControl()
+
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,6 +21,12 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Initialize a UIRefreshControl
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        tableView.addSubview(refreshControl)
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -52,6 +63,42 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         return cell
     }
+   
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        TwitterClient.sharedInstance.homeTimelineWithParams(nil, completion:  { (tweets, error) -> () in
+            self.tweets = tweets
+            self.tableView.reloadData()
+        })
+        
+        let twitterConsumerKey = "E9Mwop8b4Q3XOcfuHe87rAZi1"
+        let twitterConsumerSecret = "3FoRTPIWoXyzBSv8vIYJDZCRQ1xr5p4fP4pmDn2Akb3GI95m5G"
+        let twitterBaseURL = NSURL(string: "https://api.twitter.com")
+        let request = NSURLRequest(URL: twitterBaseURL!)
+        
+        // ... Create the NSURLRequest (myRequest) ...
+        
+        // Configure session so that completion handler is executed on main UI thread
+        let session = NSURLSession(
+            configuration: NSURLSessionConfiguration.defaultSessionConfiguration(),
+            delegate:nil,
+            delegateQueue:NSOperationQueue.mainQueue()
+        )
+        
+        let task : NSURLSessionDataTask = session.dataTaskWithRequest(request,
+            completionHandler: { (data, response, error) in
+                
+                // ... Use the new data to update the data source ...
+                
+                // Reload the tableView now that there is new data
+                self.tableView.reloadData()
+                
+                // Tell the refreshControl to stop spinning
+                refreshControl.endRefreshing()
+        });
+        task.resume()
+        
+    }
+    
     
     
     //...it'll fire a global notification that the user logged out...
