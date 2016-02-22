@@ -17,9 +17,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-Nk-hOR">
-                                <rect key="frame" x="99" y="269" width="122" height="30"/>
-                                <state key="normal" title="Login with Twitter"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kl4-Nk-hOR">
+                                <rect key="frame" x="56" y="201" width="209" height="48"/>
+                                <state key="normal" title="Login with Twitter" image="Twitter_logo_blue_48">
+                                    <color key="titleColor" red="0.14715341039693319" green="0.67483856902761452" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="onLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dbL-px-3Vy"/>
                                 </connections>
@@ -49,7 +51,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nd-aE-PQY">
                                 <rect key="frame" x="264" y="20" width="48" height="30"/>
-                                <state key="normal" title="Logout"/>
+                                <state key="normal" title="Logout">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
                                 <connections>
                                     <action selector="onLogout:" destination="Ncq-eC-DKY" eventType="touchUpInside" id="B3b-2i-7jQ"/>
                                 </connections>
@@ -98,7 +102,7 @@
                                                         <constraint firstAttribute="width" constant="25" id="nkL-KH-IvC"/>
                                                     </constraints>
                                                     <color key="tintColor" red="0.59881810899999999" green="0.59881810899999999" blue="0.59881810899999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <state key="normal" title="Retweet" image="retweet-action-inactive">
+                                                    <state key="normal" title="Retweet" image="retweet-action_default">
                                                         <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
@@ -182,7 +186,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.25882352941176467" green="0.67450980392156867" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="1aS-y6-G8S" secondAttribute="trailing" id="5Sy-sV-zRs"/>
                             <constraint firstAttribute="trailing" secondItem="5nd-aE-PQY" secondAttribute="trailing" constant="8" id="anv-Yx-e1t"/>
@@ -203,7 +207,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Twitter_logo_blue_48" width="48" height="48"/>
         <image name="like-action-off" width="54" height="72"/>
-        <image name="retweet-action-inactive" width="75" height="72"/>
+        <image name="retweet-action_default" width="75" height="72"/>
     </resources>
 </document>
