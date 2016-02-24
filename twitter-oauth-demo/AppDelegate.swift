@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //Go to the logged in screen
             print("Current user detected: \(User.currentUser?.name)")
             var vc =
-            storyboard.instantiateViewControllerWithIdentifier("TweetsViewController") as UIViewController
+            storyboard.instantiateViewControllerWithIdentifier("NavigationController") as! UINavigationController
             
             //That arrow, in the storyboard, that's all that arrow does, it executes these lines
             window?.rootViewController = vc
