@@ -25,6 +25,7 @@ class TweetCell: UITableViewCell {
     
     var tweetID: String = ""
     
+    @IBOutlet weak var profileThumbButton: UIButton!
     
     var tweet: Tweet! {
         didSet {

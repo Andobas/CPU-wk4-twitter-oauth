@@ -15,9 +15,9 @@ import AFNetworking
 
 class TweetsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    var tweets: [Tweet]?
-
+    
     @IBOutlet weak var tableView: UITableView!
+    var tweets: [Tweet]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +54,7 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             return 0
         }
         
+        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -61,7 +62,14 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
         
         cell.tweet = tweets![indexPath.row]
         
+        cell.profileThumbButton.addTarget(self, action: "thumbClicked", forControlEvents: .TouchUpInside)
+        
+        
         return cell
+    }
+    
+    func thumbClicked() {
+        self.performSegueWithIdentifier("profileSegue", sender: self)
     }
    
     func refreshControlAction(refreshControl: UIRefreshControl) {
