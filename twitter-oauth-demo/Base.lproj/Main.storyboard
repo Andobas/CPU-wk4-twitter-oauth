@@ -37,7 +37,7 @@
             </objects>
             <point key="canvasLocation" x="651" y="327"/>
         </scene>
-        <!--Tweet Feed-->
+        <!--Tweets View Controller-->
         <scene sceneID="Ois-b3-cZ7">
             <objects>
                 <viewController storyboardIdentifier="TweetsViewController" id="Ncq-eC-DKY" customClass="TweetsViewController" customModule="twitter_oauth_demo" customModuleProvider="target" sceneMemberID="viewController">
@@ -147,9 +147,6 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L03-W7-7Gd">
                                                     <rect key="frame" x="18" y="79" width="50" height="50"/>
                                                     <state key="normal" title="Button" image="Twitter_logo_blue_48"/>
-                                                    <connections>
-                                                        <action selector="onProfileThumbClicked:" destination="Dqv-tk-h3W" eventType="touchUpInside" id="nto-rd-pFT"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -205,7 +202,7 @@
                             <constraint firstItem="5nd-aE-PQY" firstAttribute="top" secondItem="eux-94-BF5" secondAttribute="bottom" id="tCR-Gz-OGX"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Tweet Feed" id="acY-21-AFU"/>
+                    <navigationItem key="navigationItem" title="Tweets View Controller" id="acY-21-AFU"/>
                     <connections>
                         <outlet property="tableView" destination="1aS-y6-G8S" id="hir-gQ-QJH"/>
                         <segue destination="fgu-qa-EOJ" kind="push" identifier="profileSegue" id="cku-5z-Nqp"/>
@@ -215,10 +212,10 @@
             </objects>
             <point key="canvasLocation" x="1488" y="327"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile View Controller-->
         <scene sceneID="3wE-bs-LOg">
             <objects>
-                <viewController id="fgu-qa-EOJ" sceneMemberID="viewController">
+                <viewController id="fgu-qa-EOJ" customClass="ProfileViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rPi-yx-zkq"/>
                         <viewControllerLayoutGuide type="bottom" id="XxO-9G-muf"/>
@@ -227,12 +224,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ProfileViewController" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWA-E6-CZP">
-                                <rect key="frame" x="85" y="121" width="161" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zXh-u4-Vhd">
+                                <rect key="frame" x="0.0" y="64" width="320" height="168"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qFq-ym-iOz">
+                                <rect key="frame" x="130" y="82" width="60" height="60"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="I0o-al-BJp">
+                                <rect key="frame" x="38" y="277" width="240" height="2.5"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -240,7 +241,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fmx-DZ-brI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="-125"/>
+            <point key="canvasLocation" x="2275" y="336"/>
         </scene>
         <!--Details View Controller-->
         <scene sceneID="YN8-yx-Jzd">
@@ -254,13 +255,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-n0-oIV">
-                                <rect key="frame" x="20" y="90" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="2jw-Vg-dIY"/>
-                                    <constraint firstAttribute="width" constant="60" id="XHO-0E-OnP"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Michael Moore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pQ4-FP-eL0">
                                 <rect key="frame" x="90" y="102" width="120" height="20.5"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
@@ -355,6 +349,13 @@
                                 </constraints>
                                 <state key="normal" title="Button" image="reply-action_0"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kOs-n0-oIV">
+                                <rect key="frame" x="20" y="90" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="2jw-Vg-dIY"/>
+                                    <constraint firstAttribute="width" constant="60" id="XHO-0E-OnP"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -411,12 +412,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f8h-4h-Kbp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="539"/>
+            <point key="canvasLocation" x="1878" y="781"/>
         </scene>
-        <!--View Controller-->
+        <!--Compose View Controller-->
         <scene sceneID="c1d-An-7xi">
             <objects>
-                <viewController id="Ucw-SQ-cvG" sceneMemberID="viewController">
+                <viewController id="Ucw-SQ-cvG" customClass="ComposeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oKi-9v-Ag6"/>
                         <viewControllerLayoutGuide type="bottom" id="qz5-8t-nga"/>
@@ -424,12 +425,39 @@
                     <view key="view" contentMode="scaleToFill" id="3aR-KA-6GC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Compose View Controller" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ROq-Sw-aNZ">
+                                <rect key="frame" x="63" y="113" width="195" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ACV-OL-LPY">
+                                <rect key="frame" x="18" y="10" width="40" height="40"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Michael Moore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Urg-4m-ALt">
+                                <rect key="frame" x="66" y="13" width="101" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="MMFlint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q9j-Vh-dSK">
+                                <rect key="frame" x="66" y="30" width="60.5" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="0.59881810899999999" green="0.59881810899999999" blue="0.59881810899999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q9j-Vh-dSK" firstAttribute="top" secondItem="Urg-4m-ALt" secondAttribute="bottom" id="Grs-aA-7RP"/>
+                            <constraint firstItem="q9j-Vh-dSK" firstAttribute="leading" secondItem="Urg-4m-ALt" secondAttribute="leading" id="UES-eN-YiB"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZh-xu-EzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1902" y="1190"/>
+            <point key="canvasLocation" x="1878" y="-58"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Udy-hJ-Aaf">
