@@ -23,11 +23,23 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var retweetButton: UIButton!
     @IBOutlet weak var favoriteButton: UIButton!
     
+    var tweet: Tweet!
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("\(tweet)")
+        nameLabel.text = "\((tweet.user?.name)!)"
+        handleLabel.text = "\((tweet.user?.screenname)!)"
+        tweetLabel.text = tweet.text
+        
+        
+        //Retrieving the image
+        let imageUrl = tweet.user?.profileImageUrl!
+        profilePictureImageView.setImageWithURL(NSURL(string: imageUrl!)!)
+        
         // Do any additional setup after loading the view.
     }
 
