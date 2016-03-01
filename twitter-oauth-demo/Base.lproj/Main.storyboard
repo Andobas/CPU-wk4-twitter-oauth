@@ -226,7 +226,7 @@
         <!--Profile View Controller-->
         <scene sceneID="3wE-bs-LOg">
             <objects>
-                <viewController id="fgu-qa-EOJ" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController id="fgu-qa-EOJ" customClass="ProfileViewController" customModule="twitter_oauth_demo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="rPi-yx-zkq"/>
                         <viewControllerLayoutGuide type="bottom" id="XxO-9G-muf"/>
@@ -515,10 +515,10 @@
             </objects>
             <point key="canvasLocation" x="1915" y="772"/>
         </scene>
-        <!--Compose View Controller-->
+        <!--ComposeViewController-->
         <scene sceneID="c1d-An-7xi">
             <objects>
-                <viewController id="Ucw-SQ-cvG" customClass="ComposeViewController" sceneMemberID="viewController">
+                <viewController title="ComposeViewController" id="Ucw-SQ-cvG" customClass="ComposeViewController" customModule="twitter_oauth_demo" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oKi-9v-Ag6"/>
                         <viewControllerLayoutGuide type="bottom" id="qz5-8t-nga"/>
@@ -549,12 +549,11 @@
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vkv-4D-hMv">
                                 <rect key="frame" x="24" y="162" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place Holder Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uMW-Z7-Z6z">
-                                <rect key="frame" x="26" y="137" width="144" height="21"/>
+                                <rect key="frame" x="23" y="126" width="144" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -572,6 +571,13 @@
                                     <action selector="dismiss:" destination="Ucw-SQ-cvG" eventType="touchUpInside" id="yHi-YH-Iy0"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9CM-3g-cXN">
+                                <rect key="frame" x="249" y="23" width="42" height="30"/>
+                                <state key="normal" title="Tweet"/>
+                                <connections>
+                                    <action selector="sendTweet:" destination="Ucw-SQ-cvG" eventType="touchUpInside" id="9VH-EW-T1J"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -581,9 +587,7 @@
                             <constraint firstItem="q9j-Vh-dSK" firstAttribute="leading" secondItem="Urg-4m-ALt" secondAttribute="leading" id="UES-eN-YiB"/>
                         </constraints>
                     </view>
-                    <toolbarItems>
-                        <barButtonItem title="Item" id="nQO-fb-Kc0"/>
-                    </toolbarItems>
+                    <toolbarItems/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="characterLimit" destination="CLn-kc-WeR" id="PkN-f3-YoK"/>
@@ -592,7 +596,7 @@
                         <outlet property="nameLabel" destination="Urg-4m-ALt" id="2p9-iV-dmi"/>
                         <outlet property="placeHolderLabel" destination="uMW-Z7-Z6z" id="8cZ-ln-zRS"/>
                         <outlet property="profilePictureImageView" destination="ACV-OL-LPY" id="5bi-x0-9vY"/>
-                        <outlet property="sendTweetButton" destination="nQO-fb-Kc0" id="vmM-Xd-S7o"/>
+                        <outlet property="sendTweetButton" destination="9CM-3g-cXN" id="VcZ-gc-mlz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uZh-xu-EzG" userLabel="First Responder" sceneMemberID="firstResponder"/>

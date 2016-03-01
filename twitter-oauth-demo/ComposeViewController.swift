@@ -23,7 +23,8 @@ class ComposeViewController: UIViewController, UITextViewDelegate {
     @IBOutlet weak var composeTweetView: UITextView!
     @IBOutlet weak var characterLimit: UILabel!
   
-    @IBOutlet weak var sendTweetButton: UIBarButtonItem!
+    @IBOutlet weak var sendTweetButton: UIButton!
+    
     
     @IBOutlet weak var placeHolderLabel: UILabel!
     

@@ -171,8 +171,8 @@ class TweetsViewController: UIViewController, UITableViewDataSource, UITableView
             let tweet = tweets![indexPath!.row]
             let user = tweet.user
             
-            let profileViewController = segue.destinationViewController as! ProfileViewController
-            profileViewController.user = user
+            let profileViewController = segue.destinationViewController as? ProfileViewController
+            profileViewController?.user = user
             
         }
         
