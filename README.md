@@ -62,7 +62,7 @@ Describe any challenges encountered while building the app.
 
 # Project 5 - *Twitter Redux*
 
-Time spent: **X** hours spent in total
+Time spent: **30** hours spent in total
 
 ## User Stories
 
@@ -109,7 +109,7 @@ GIF created with [LiceCap](http://www.cockos.com/licecap/).
 ## Notes
 
 Describe any challenges encountered while building the app.
-
+It was pretty challenging for me to adapt the knowledge from the previous weeks to this assignment, but a great learning experience overall. 
 ## License
 
     Copyright [2016] [Juan Hernandez]
