@@ -35,7 +35,7 @@ class Tweet: NSObject {
         
     }
     
-    class func tweetsWithArray(array: [NSDictionary]) -> [Tweet] {
+    class func tweetsWithArray (array: [NSDictionary]) -> [Tweet] {
         //Simple convenience method that parses an array of tweets:
         var tweets = [Tweet]()
         

@@ -9,6 +9,13 @@
 import UIKit
 import AFNetworking
 
+/*
+protocol TweetCellButtonDelegate: class {
+    func retweetClicked(tweetCell: TweetCell)
+    func favoriteClicked(tweetCell: TweetCell)
+}
+*/
+
 class TweetCell: UITableViewCell {
 
     
@@ -23,9 +30,14 @@ class TweetCell: UITableViewCell {
     @IBOutlet weak var retweetLabel: UILabel!
     @IBOutlet weak var favoriteLabel: UILabel!
     
+    //In relation to the protocol
+    //weak var buttonDelegate: TweetCellButtonDelegate?
+    
     var tweetID: String = ""
     
-    @IBOutlet weak var profileThumbButton: UIButton!
+    
+//*****MIGHT NOT NEED THIS ANYMORE!******
+    //@IBOutlet weak var profileThumbButton: UIButton!
     
     var tweet: Tweet! {
         didSet {
@@ -96,6 +108,7 @@ class TweetCell: UITableViewCell {
     }
 
     @IBAction func onRetweet(sender: AnyObject) {
+        
         TwitterClient.sharedInstance.retweet(Int(tweetID)!, params: nil, completion: {(error) -> () in
             self.retweetButton.setImage(UIImage(named: "retweet-action-on-green"), forState: UIControlState.Selected)
             
@@ -106,9 +119,15 @@ class TweetCell: UITableViewCell {
                 self.retweetLabel.text = String(self.tweet.retweetCount! + 1)
             }
         })
+
+        
+       //buttonDelegate?.retweetClicked(self)
+        
     }
     
     @IBAction func onLike(sender: AnyObject) {
+        
+        
         TwitterClient.sharedInstance.likeTweet(Int(tweetID)!, params: nil, completion: {(error) -> () in
             self.favoriteButton.setImage(UIImage(named: "like-action-on"), forState: UIControlState.Selected)
             
@@ -119,6 +138,8 @@ class TweetCell: UITableViewCell {
                 self.favoriteLabel.text = String(self.tweet.likeCount! + 1)
             }
         })
+        
+        //buttonDelegate?.favoriteClicked(self)
     }
     
     

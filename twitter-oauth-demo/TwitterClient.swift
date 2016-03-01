@@ -111,6 +111,55 @@ class TwitterClient: BDBOAuth1SessionManager {
         })
     }
     
+    func getUserBanner(id: Int, params: NSDictionary?, completion: (error: NSError?) -> () ){
+        GET("1.1/users/profile_banner.json", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("got user banner")
+            completion(error: nil)
+            }, failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("did not get user banner")
+                completion(error: error)
+            }
+        )
+    }
+    
+    //****************************************
+    func userTweets(profileScreenName: String, params: NSDictionary?, completion: (error: NSError?) -> () ){
+        GET("1.1/statuses/user_timeline.json", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("tweets: \(response)")
+            completion(error: nil)
+            }, failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("Couldn't find the tweets")
+                completion(error: error)
+            }
+        )
+    }
+    
+    func reply(escapedTweet: String, statusID: Int, params: NSDictionary?, completion: (error: NSError?) -> () ){
+        POST("1.1/statuses/update.json?in_reply_to_status_id=\(statusID)&status=\(escapedTweet)", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("tweeted: \(escapedTweet)")
+            completion(error: nil)
+            }, failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("Couldn't reply")
+                completion(error: error)
+            }
+        )
+    }
+    
+    
+    func compose(escapedTweet: String, params: NSDictionary?, completion: (error: NSError?) -> () ){
+        POST("1.1/statuses/update.json?status=\(escapedTweet)", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
+            print("tweeted: \(escapedTweet)")
+            completion(error: nil)
+            }, failure: { (operation: NSURLSessionDataTask?, error: NSError!) -> Void in
+                print("Couldn't compose")
+                completion(error: error)
+            }
+        )
+    }
+
+    
+    
+    
     func retweet(id: Int, params: NSDictionary?, completion: (error: NSError?) -> () ){
         POST("1.1/statuses/retweet/\(id).json", parameters: params, success: { (operation: NSURLSessionDataTask!, response: AnyObject?) -> Void in
             print("Retweeted tweet with id: \(id)")

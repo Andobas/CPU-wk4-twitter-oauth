@@ -7,13 +7,39 @@
 //
 
 import UIKit
+import AFNetworking
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var bannerImageView: UIImageView!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var handleLabel: UILabel!
+    @IBOutlet weak var tweetsTotalLabel: UILabel!
+    @IBOutlet weak var followingTotalLabel: UILabel!
+    @IBOutlet weak var followersTotalLabel: UILabel!
     
+    var user: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let imageUrl = (user?.profileImageUrl!)!
+        profilePictureImageView.setImageWithURL(NSURL(string: imageUrl)!)
+        
+        //let banner = (user?.bannerImageUrl!)!
+        bannerImageView.setImageWithURL((user?.bannerImageUrl!)!)
+        
+        nameLabel.text = user?.name
+        handleLabel.text = "@\((user?.screenname)!)"
+        tweetsTotalLabel.text = String(user!.statusesCount)
+        followingTotalLabel.text = String(user!.followingTotal)
+        followersTotalLabel.text = String(user!.followersTotal)
+        
+        
+    
+        
+        
 
         // Do any additional setup after loading the view.
     }
